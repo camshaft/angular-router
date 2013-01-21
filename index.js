@@ -42,7 +42,12 @@ module.exports = function(config) {
     }
 
     if(typeof config.index === "function") {
-      return config.index(send);
+      if (config.index.length) {
+        return config.index(send);
+      }
+      else {
+        return config.index(req, res, next);
+      };
     }
   }
 };
