@@ -42,7 +42,7 @@ module.exports = function(config) {
     }
 
     if(typeof config.index === "function") {
-      if (config.index.length) {
+      if (config.index.length === 1) {
         return config.index(send);
       }
       else {
